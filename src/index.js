@@ -10,8 +10,8 @@ import rootReducer from './reducers/index';
 
 import'bootstrap/dist/css/bootstrap.min.css';
 
-//const composeEnhancers = composeWithDevTools({trace : true});
-const store = createStore(rootReducer,{},applyMiddleware(ReduxPromise));//,{},composeEnhancers(applyMiddleware()));
+const composeEnhancers = composeWithDevTools({trace : true});
+const store = createStore(rootReducer,{},composeEnhancers(applyMiddleware(ReduxPromise)));//,{},composeEnhancers(applyMiddleware()));
 
 ReactDOM.render(
 	<Provider store ={store}>
