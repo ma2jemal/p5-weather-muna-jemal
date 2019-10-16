@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore,applyMiddleware} from 'redux';
+import ReduxPromise from 'redux-promise';
 import {Provider} from 'react-redux';
 import {composeWithDevTools} from 'redux-devtools-extension'
 
@@ -9,8 +10,8 @@ import rootReducer from './reducers/index';
 
 import'bootstrap/dist/css/bootstrap.min.css';
 
-const composeEnhancers = composeWithDevTools({trace : true});
-const store = createStore(rootReducer);//,{},composeEnhancers(applyMiddleware()));
+//const composeEnhancers = composeWithDevTools({trace : true});
+const store = createStore(rootReducer,{},applyMiddleware(ReduxPromise));//,{},composeEnhancers(applyMiddleware()));
 
 ReactDOM.render(
 	<Provider store ={store}>
