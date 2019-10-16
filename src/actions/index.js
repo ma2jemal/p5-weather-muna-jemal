@@ -13,7 +13,7 @@ const url =`${ROOT_URL}&q=${city},us`;
 // axios.get(url) returns a promise
 const request = axios.get(url);
 
-console.log('Request (pre middleware):', request);
+//console.log('Request (pre middleware):', request);
 
 return{       
  		type: FETCH_WEATHER, 
