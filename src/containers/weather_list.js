@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 import Chart from '../components/chart';
+import GoogleMaps from '../components/google_maps';
 
 class WeatherList extends Component{
 
@@ -10,11 +11,15 @@ class WeatherList extends Component{
 		const name = cityData.city.name;
 		const temp = cityData.list.map(lists => (lists.main.temp));
 		const pressure = cityData.list.map(lists => (lists.main.pressure));
-		const humidity = cityData.list.map(lists => (lists.main.humidity))
+		const humidity = cityData.list.map(lists => (lists.main.humidity));
+		const { lon, lat} = cityData.city.coord;
+		console.log(lon,lat);
 
 		return(
 			<tr key={name}>
-				<td>{ name }</td>
+				<td>
+					<GoogleMaps lon = {lon} lat = {lat}/>
+				</td>
 				<td>
 					<Chart data = {temp} color = "red" units = "Kelvin"/>
 				</td>
