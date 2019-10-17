@@ -18,7 +18,7 @@ class WeatherList extends Component{
 		return(
 			<tr key={name}>
 				<td>
-					{Atlanta}
+					{name}
 					<GoogleMaps lon = {lon} lat = {lat}/>
 					}
 				}
