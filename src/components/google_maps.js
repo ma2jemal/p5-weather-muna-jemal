@@ -13,6 +13,7 @@ class GoogleMaps extends Component {
 		})
 	}
 	render(){
+		console.log("HI");
 		return <div ref = "map"/>
 	}
 }
